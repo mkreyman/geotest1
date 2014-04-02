@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :file
-
   has_secure_password(validations: false)
 
   validates_confirmation_of :password,
