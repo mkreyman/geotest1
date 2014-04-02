@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.4'
 gem 'paperclip'
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt-ruby'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'guard-bundler'
