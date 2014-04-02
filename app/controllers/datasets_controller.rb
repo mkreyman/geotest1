@@ -1,3 +1,5 @@
+require 'csv'
+
 class DatasetsController < ApplicationController
   before_action :set_dataset, only: [:show, :edit, :update, :destroy]
 
@@ -61,6 +63,7 @@ class DatasetsController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dataset
@@ -69,6 +72,6 @@ class DatasetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dataset_params
-      params.require(:dataset).permit(:name, :description, :user_id)
+      params.require(:dataset).permit(:id, :dataset_name, :description, :file, :user_id)
     end
 end

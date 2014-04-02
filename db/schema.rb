@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402003421) do
+ActiveRecord::Schema.define(version: 20140402043018) do
 
   create_table "datasets", force: true do |t|
-    t.string   "name"
+    t.string   "dataset_name"
     t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at"
