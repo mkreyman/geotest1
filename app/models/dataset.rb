@@ -15,8 +15,8 @@ class Dataset < ActiveRecord::Base
     my_array_of_hashes = my_csv.to_a.map {|row| row.to_hash}
     # byebug
     my_array_of_hashes.each do |hash|
-      record = Record.new
-      record.dataset_id = :id
+      # record = Record.new(dataset: self) # This is another way to do it.
+      record = self.records.build
       record.data = hash
       record.save
     end

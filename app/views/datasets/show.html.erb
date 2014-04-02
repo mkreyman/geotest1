@@ -3,19 +3,54 @@
 <p>
   <strong>Dataset Name:</strong>
   <%= @dataset.dataset_name %>
-</p>
-
-<p>
+  </br>
   <strong>Description:</strong>
   <%= @dataset.description %>
+  </br>
+  <strong>Created by User ID:</strong>
+  <%= @dataset.user_id %>
+  </br>
+  <strong>Created on:</strong>
+  <%= @dataset.created_at.localtime %>
+  </br>
+  <strong>Original filename:</strong>
+  <%= @dataset.file_file_name %>
+  </br>
+  <strong>Original file size:</strong>
+  <%= @dataset.file_file_size %>
 </p>
 
 <p>
-  <strong>Records:</strong>
- <% @dataset.records.each do |record| %>
-  <%= record.data %>
- <% end %>
+<table border="1">
+  <thead>
+    <tr>
+    <% @dataset.records.first.data.keys.each do |key| %>
+      <th><%= key.capitalize %></th>
+    <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @dataset.records.each do |record| %>
+    <tr>
+      <% record.data.values.each do |value| %>
+        <td><%= value %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+
+</table>
 </p>
+
+<p>&nbsp;</p>
+<p>
+  <strong>Data to work with:</strong></br></br>
+  <% @dataset.records.each do |record| %>
+      <%= record.data %></br>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
 <%= link_to 'Back', datasets_path %>
