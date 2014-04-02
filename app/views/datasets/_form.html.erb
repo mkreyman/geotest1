@@ -23,7 +23,14 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
+  <div class="field">
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                datasets_path %>
   </div>
 <% end %>
