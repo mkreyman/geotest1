@@ -1,5 +1,3 @@
-require 'csv'
-
 class DatasetsController < ApplicationController
   before_action :set_dataset, only: [:show, :edit, :update, :destroy]
 
